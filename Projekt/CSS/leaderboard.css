@@ -1,58 +1,49 @@
 .navbar {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
     overflow: hidden;
     background-color: #333;
-    position: fixed;
-    top: 0;
-    width: 100%;
 }
 
-.navitem {
+.navbar a {
     float: left;
-    border-right:1px solid #bbb;
-}
-.navitem a {
-    display: block;
+    display: inline-block;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 14px 20px;
     text-decoration: none;
 }
-.navitem a:hover:not(.active) {
-    background-color: #111;
+
+.navbar a.right {
+    float: right;
 }
 .active {
     background-color: #4CAF50;
 }
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
 .header {  
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: row;
-    height: 20%;
     overflow: hidden;
-    margin: 35px 0px 0px 10%;
+    margin: 0px 0px 0px 10%;
 }
 .header > div.left {
-    height: 100%;
     flex: 70%;
 }
 .header > div.right{
-    height: 100%;
     flex: 30%;
 }
 .tablediv {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    height: 70%;
     overflow: hidden;
+    margin: 0px 0px 0px 10%;
 }
 .tablediv > div {
-    height: 100%;
     flex: 100%;
-    margin-left: 10%;
 }
 .leaderboard {
     border-collapse: collapse;
@@ -72,4 +63,21 @@ th {
 }
 tr:hover {
     background-color: #abcdef;
+}
+@media screen and (max-width: 500px) {
+    .navbar a {
+        float: none;
+        width: 100%;
+        text-align:center;
+        padding: 14px 0px;
+    }
+}
+@media screen and (max-width: 700px) {
+    .header{
+        flex-direction: column;
+        margin-left: 5%;
+    }
+    .tablediv{
+        margin-left: %px;   
+    }
 }
