@@ -1,0 +1,75 @@
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.navitem {
+    float: left;
+    border-right:1px solid #bbb;
+}
+.navitem a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.navitem a:hover:not(.active) {
+    background-color: #111;
+}
+.active {
+    background-color: #4CAF50;
+}
+.header {  
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    height: 20%;
+    overflow: hidden;
+    margin: 35px 0px 0px 10%;
+}
+.header > div.left {
+    height: 100%;
+    flex: 70%;
+}
+.header > div.right{
+    height: 100%;
+    flex: 30%;
+}
+.tablediv {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    height: 70%;
+    overflow: hidden;
+}
+.tablediv > div {
+    height: 100%;
+    flex: 100%;
+    margin-left: 10%;
+}
+.leaderboard {
+    border-collapse: collapse;
+    width: 50%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+tr:hover {
+    background-color: #abcdef;
+}
