@@ -50,7 +50,7 @@
     flex-direction: row;
     height: 40%;
     overflow: hidden;
-    margin: 10% 0px 0px 0px;
+    margin: 10% 0px 0px 5%;
 }
 .header > div.left{
 	height: 100%;
@@ -58,6 +58,24 @@
 	
 }
 .header > div.rest{
+	height: 100%;
+	flex:25%;
+	align-items: center;
+}
+.header_r {  
+    display: flex;
+    flex-wrap: no-wrap;
+    flex-direction: row;
+    height: 70%;
+    overflow: hidden;
+    margin: 10% 0px 0px 5%;
+}
+.header_r > div.left{
+	height: 100%;
+	flex: 50%;
+	
+}
+.header_r > div.rest{
 	height: 100%;
 	flex:25%;
 	align-items: center;
