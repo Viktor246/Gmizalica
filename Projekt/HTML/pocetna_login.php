@@ -12,6 +12,9 @@ session_start();
 
 
 <body>
+	<?php
+		
+	?>
 	<div class="header">
 
 		<div class="side" align="right">
