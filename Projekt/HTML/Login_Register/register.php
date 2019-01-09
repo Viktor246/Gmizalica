@@ -66,34 +66,28 @@
   			} 
   			if ($emailErr == "" && $usernameErr == "" && $passwordErr == "" && $confirmErr == "") {
   				$sql1= "INSERT INTO player (username, email, password) VALUES ('".$_POST["username"]."', '".$_POST["email"]."', '".$_POST["password"]."')";
-  				
-
   				if (mysqli_query ($db, $sql1)) {
   					$nesto = $_POST["username"];
   					$sql = "SELECT userID FROM player WHERE username='$nesto'";
   					$resultsuserID = mysqli_query($db, $sql);
-  					$row = mysqli_fetch_row($resultsuserID);
-  					$ovo = $row["userID"];
-  					echo $ovo;
-  					$sql2 = "INSERT INTO leaderboard (userID) VALUES '$ovo'";
-  					mysqli_query ($db, $sql2);
+  					$row = mysqli_fetch_array($resultsuserID);
+  					$ovo = $row[0];
+  					$sql2 = "INSERT INTO leaderboard (userID) VALUES ('$ovo')";
+  					mysqli_query($db, $sql2);
+  					session_start();
+  					$_SESSION["ID"] = $ovo;
+  					header('Location: ../pocetna_login.php');
+  					
   				}
   			}
 
   	}
   	
-	function test_input($data) {
-		$data = trim($data);
-		$data = stripslashes($data);
-		$data = htmlspecialchars($data);
-		return $data;
-	}
-
 	mysqli_close($db);
 	?>
 	<div class="navbar">
-  		<a href="login.html" >Login</a>
-  		<a href="register.html" class="active">Register</a>
+  		<a href="login.php" >Login</a>
+  		<a href="register.php" class="active">Register</a>
   		<a href="../pocetna.html" class="right">Return</a>
 	</div>
 

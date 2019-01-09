@@ -13,7 +13,7 @@ session_start();
 
 <body>
 	<?php
-		
+		echo $_SESSION["ID"];
 	?>
 	<div class="header">
 
@@ -29,9 +29,9 @@ session_start();
 	<div class="menu">
 		<div class="side"></div>
 		<div class="middle" align="center">
-			<a class="gumb" href="">Play</a >
+			<a class="gumb" href="snake.html">Play</a >
 			<a class="gumb" href="Leaderboard/dailyleaderboard.html">Leaderboard</a>
-			<a class="gumb" href="">Settings</a>
+			<a class="gumb" href="Settings/settings.html">Settings</a>
 			<a class="gumb" href="">About</a>
 		</div>
 		<div class="side"></div>
