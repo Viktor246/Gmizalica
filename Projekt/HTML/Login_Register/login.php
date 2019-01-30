@@ -9,10 +9,7 @@
 </head>
 <body>
 	<?php
-		$servername = '127.0.0.1';
-		$dbusername = 'root';
-		$dbpass = 'root';
-		$dbname = 'gmizalica';
+		include "../baza.php";
 		$db = new mysqli($servername, $dbusername, $dbpass, $dbname);
 		if ($db->connect_error) {
 			die("Ne radim");
@@ -34,7 +31,7 @@
     				if($row["password"] == $_POST["password"]){
     					session_start();
     					$_SESSION["ID"] = $row["userID"];
-    					header('Location: ../pocetna_login.php');
+       					header('Location: ../pocetna_login.php');
     				}else
     					$error = "Username/password is wrong";
     				}

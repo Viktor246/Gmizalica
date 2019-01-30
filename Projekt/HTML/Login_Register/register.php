@@ -11,10 +11,7 @@
 </head>
 <body>
   <?php
-    $servername = '127.0.0.1';
-    $dbusername = 'root';
-    $dbpass = 'root';
-    $dbname = 'gmizalica';
+    include "../baza.php";
     $db = new mysqli($servername, $dbusername, $dbpass, $dbname);
     if ($db->connect_error) {
       die("Ne radim");

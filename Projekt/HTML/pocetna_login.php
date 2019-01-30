@@ -1,5 +1,8 @@
 <?php
 session_start();
+if (!isset($_SESSION["ID"])) {
+  header('Location: Login_Register/register.php');
+}
 ?>
 <html>
 <head>
@@ -14,10 +17,8 @@ session_start();
 <body>
 	<?php
 		$id = $_SESSION["ID"];
-		$servername = '127.0.0.1';
-		$dbusername = 'root';
-		$dbpass = 'root';
-		$dbname = 'gmizalica';
+		echo $id;
+		include "baza.php";
 		$db = new mysqli($servername, $dbusername, $dbpass, $dbname);
 		if ($db->connect_error) {
 			die("Ne radim");	
@@ -30,7 +31,7 @@ session_start();
 	<div class="header">
 
 		<div class="side" align="right">
-			<a href="neki profil" style="background-color: red;"><img src="profilna slika" style="width: 100px;"></a>
+			<a href="profile.php" style="background-color: red;"><img src="profilna slika" style="width: 100px;"></a>
 		</div>
 		<div class="middle" align="center"><img src="../CSS/Pozadine/gmizalica.png" style="width: 100%;"></div>
 		<div class="side" align="center"><h1>Personal highscore</h1><p><?php echo $row["hs"]; ?></p></div>
